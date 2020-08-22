@@ -1,9 +1,11 @@
 import pyttsx3
 import os
 
-# pyttsx3.speak("Welcome to my app")
+
 print()
+
 print("                   Hello!! I am your technical assistant.                               ")
+pyttsx3.speak("Hello!! I am your technical assistant.")
 print("                   --------------------------------------                               ")
 print("|______________________________________________________________________________________|")
 print("|                                                                                      |")
@@ -40,50 +42,50 @@ while True:
     print("    Hi "+name + ", How can I help you? ", end='')
     p = input()
 
-    if (("run" in p) or ("execute" in p) or ("open" in p)) and (("chrome" in p) or ("browser" in p)):
-        if (("don't" in p) or ("do not" in p)):
+    if (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("chrome" in p.lower()) or ("browser" in p.lower())):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Chrome Browser.....")
             os.system("chrome")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and (("notepad" in p) or ("editor" in p)):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("notepad" in p.lower()) or ("editor" in p.lower())):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Notepad.....")
             os.system("notepad")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and ("sublime" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and ("sublime" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Sublime Text Editor.....")
             os.system("sublime_text")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and (("vs " in p) or ("code" in p)):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vs " in p.lower()) or ("code" in p.lower())):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Visual Studio Code Editor.....")
             os.system("code")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and (("vlc" in p) and ("media" in p) and ("player" in p)) :
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vlc" in p.lower()) and ("media" in p.lower()) and ("player" in p.lower())) :
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening VLC Media Player.....")
             os.system("vlc")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and (("window" in p) or ("media" in p) or ("player" in p)):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("window" in p.lower()) or ("media" in p.lower()) or ("player" in p.lower())):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Windows Media Player.....")
             os.system("wmplayer")
-    elif (("run" in p) or ("execute" in p) or ("open" in p)) and (("virtualbox" in p) or ("virtual" in p)):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("virtualbox" in p.lower()) or ("virtual" in p.lower())):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    Opening Oracle Virtual Box.....")
             os.system("VirtualBox")
-    elif (("sum" in p) or ("add" in p)) and (("show" in p) or ("print" in p)) and ("code" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("sum" in p.lower()) or ("add" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    ------------------------------------------------------")
@@ -96,8 +98,8 @@ while True:
             print("        sum += int(num)")
             print("    print(\"Sum of all entered numbers = \", sum)")
             print("    ------------------------------------------------------")
-    elif ("sum" in p) or ("add" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif ("sum" in p.lower()) or ("add" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             numbers = input("    Enter numbers separated by space ")
@@ -108,8 +110,8 @@ while True:
             for num in numberList:
                 sum += int(num)
             print("    Sum of all entered numbers = ", sum)
-    elif (("difference" in p) or ("subtract" in p) or("sub" in p)) and (("show" in p) or ("print" in p)) and ("code" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("difference" in p.lower()) or ("subtract" in p.lower()) or("sub" in p.lower())) and (("show" in p.lower()) or ("p.lower()rint" in p.lower())) and ("code" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    ------------------------------------------------------")
@@ -121,8 +123,8 @@ while True:
             print("    diff = int(max(numberList)) - int(min(numberList))")
             print("    print(\"Difference between the two numbers = \", diff)")
             print("    ------------------------------------------------------")
-    elif ("subtract" in p) or ("difference" in p) or ("diff" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif ("subtract" in p.lower()) or ("difference" in p.lower()) or ("diff" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             numbers = input("    Enter only two numbers separated by space ")
@@ -132,8 +134,8 @@ while True:
             
             diff = int(max(numberList)) - int(min (numberList))
             print("    Difference between the two numbers = ", diff)
-    elif (("product" in p) or ("multiply" in p)) and (("show" in p) or ("print" in p)) and ("code" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("product" in p.lower()) or ("multiply" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    ------------------------------------------------------")
@@ -146,8 +148,8 @@ while True:
             print("        product *= int(num)")
             print("    print(\"Product of all entered numbers = \", product)")
             print("    ------------------------------------------------------")
-    elif ("product" in p) or ("multiply" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif ("product" in p.lower()) or ("multiply" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             numbers = input("    Enter numbers separated by space ")
@@ -158,8 +160,8 @@ while True:
             for num in numberList:
                 product *= int(num)
             print("    Product of all entered numbers = ", product)
-    elif (("division" in p) or ("divide" in p)) and (("show" in p) or ("print" in p)) and ("code" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif (("division" in p.lower()) or ("divide" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             print("    ------------------------------------------------------")
@@ -171,8 +173,8 @@ while True:
             print("    div = int(max(numberList)) / int(min(numberList))")
             print("    print(\"Division of two numbers = \", div)")
             print("    ------------------------------------------------------")
-    elif ("division" in p) or ("divide" in p):
-        if (("don't" in p) or ("do not" in p)):
+    elif ("division" in p.lower()) or ("divide" in p.lower()):
+        if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
             numbers = input("    Enter only two numbers separated by space ")
@@ -182,7 +184,7 @@ while True:
             
             div = int(max(numberList)) / int(min (numberList))
             print("    Division of two numbers = ", div)
-    elif ("exit" in p) or ("shutdown" in p) or ("quit" in p):
+    elif ("exit" in p.lower()) or ("shutdown" in p.lower()) or ("quit" in p.lower()):
         print("    Closing App.....")
         break
     else:
