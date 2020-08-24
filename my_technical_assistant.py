@@ -31,7 +31,12 @@ print("|                                                                        
 print("|I will do the following things for you -->                                            |")
 pyttsx3.speak("I will do the following things for you")
 print("|-----------------------------------------------------                                 |")
+print("|I can show u -->                                                                      |")
+print("|               Current Time                                                           |")
+print("|               Today's date                                                           |")
+print("|-----------------------------------------------------                                 |")
 print("|I can open -->                                                                        |")
+print("|               Calculator                                                             |")
 print("|               Chome Browser                                                          |")
 print("|               Notepad editor                                                         |")
 print("|               VLC Media Player                                                       |")
@@ -60,7 +65,38 @@ while True:
     print("    Hi "+name + ", How can I help you? ", end='')
     p = input()
     q = p.lower()
-    if (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("chrome" in q) or ("browser" in q)):
+    if (("date" in q) and ("today" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not show u today's date")
+            print("    Okay. I will not show u today's date")
+            print()
+        else:
+            pyttsx3.speak("Today's date is")
+            print("    Today's date is : ")
+            os.system("date /T")
+            print()
+    elif (("time" in q) or ("tym" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not show u current time")
+            print("    Okay. I will not show u current time")
+            print()
+        else:
+            pyttsx3.speak("Current time is")
+            print("    Current time is : ")
+            os.system("time /T")
+            print()
+    elif (("calc" in q) or ("calculator" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open calculator")
+            print("    Okay. I will not open calculator")
+            print()
+        else:
+            pyttsx3.speak("Opening Calculator")
+            print("    Opening Calculator ")
+            os.system("calc")
+            print()
+    
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("chrome" in q) or ("browser" in q)):
         if (("don't" in q) or ("do not" in q)):
             pyttsx3.speak("Okay. I will not open chrome browser")
             print("    Okay. I will not open chrome browser")
