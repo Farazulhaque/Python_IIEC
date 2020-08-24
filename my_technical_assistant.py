@@ -1,14 +1,35 @@
 import pyttsx3
 import os
+from playsound import playsound
+import speech_recognition as sr
+
+engine = pyttsx3.init()
+rate = engine.getProperty('rate')   # getting details of current speaking rate
+# print (rate)                      # printing current voice rate
+engine.setProperty('rate', 180)     # setting up new voice rate
+
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
 
 
 print()
 print("                   Hello!! I am your technical assistant.                               ")
-pyttsx3.speak("Hello!! I am your technical assistant.")
 print("                   --------------------------------------                               ")
+print()
+pyttsx3.speak("Hello!! I am your technical assistant.")
+pyttsx3.speak("Can you please tell me your name?")
+name = input("                   Can you please tell me your name? ")
+print("                  ------------------------------------------")
+print("                   Welcome to technical assistant ", name)
+print("                  ------------------------------------------")
+pyttsx3.speak(f"Welcome to technical assistant {name}")
+
+print()
+print(" ______________________________________________________________________________________ ")
 print("|______________________________________________________________________________________|")
 print("|                                                                                      |")
 print("|I will do the following things for you -->                                            |")
+pyttsx3.speak("I will do the following things for you")
 print("|-----------------------------------------------------                                 |")
 print("|I can open -->                                                                        |")
 print("|               Chome Browser                                                          |")
@@ -32,61 +53,92 @@ print("|                                                              Multiplica
 print("|                                                              Division                |")
 print("|______________________________________________________________________________________|")
 print()
-name = input("    Can you please tell me your name?  ")
-print("    ------------------------------------------")
-print("    Welcome to technical assistant ", name)
-print("    ------------------------------------------")
-print()
+pyttsx3.speak(f"Hi {name}, How can I help you? ")
+
 while True:
+
     print("    Hi "+name + ", How can I help you? ", end='')
     p = input()
-
-    if (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("chrome" in p.lower()) or ("browser" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+    q = p.lower()
+    if (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("chrome" in q) or ("browser" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open chrome browser")
+            print("    Okay. I will not open chrome browser")
+            print()
         else:
+            pyttsx3.speak("Opening Chrome Browser")
             print("    Opening Chrome Browser.....")
             os.system("chrome")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("notepad" in p.lower()) or ("editor" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("notepad" in q) or ("editor" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Notepad Editor")
+            print("    Okay. I will not open Notepad Editor")
+            print()
         else:
+            pyttsx3.speak("Opening Notepad")
             print("    Opening Notepad.....")
             os.system("notepad")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and ("sublime" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and ("sublime" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Sublime Text Editor")
+            print("    Okay. I will not open Sublime Text Editor")
+            print()
         else:
+            pyttsx3.speak("Opening Sublime Text Editor")
             print("    Opening Sublime Text Editor.....")
             os.system("sublime_text")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vs " in p.lower()) or ("code" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("vs " in q) or ("code" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak(
+                "Okay. I will not open Visual Studio Code Editor")
+            print("    Okay. I will not open Visual Studio Code Editor")
+            print()
         else:
+            pyttsx3.speak("Opening Visual Studio Code Editor")
             print("    Opening Visual Studio Code Editor.....")
             os.system("code")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vlc" in p.lower()) and ("media" in p.lower()) and ("player" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("vlc" in q) and ("media" in q) and ("player" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open VLC Media Player")
+            print("    Okay. I will not open VLC Media Player")
+            print()
         else:
+            pyttsx3.speak("Opening VLC Media Player")
             print("    Opening VLC Media Player.....")
             os.system("vlc")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("window" in p.lower()) or ("media" in p.lower()) or ("player" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("window" in q) or ("media" in q) or ("player" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Windows Media Player")
+            print("    Okay. I will not open Windows Media Player")
+            print()
         else:
+            pyttsx3.speak("Opening Windows Media Player")
             print("    Opening Windows Media Player.....")
             os.system("wmplayer")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("virtualbox" in p.lower()) or ("virtual" in p.lower())):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("virtualbox" in q) or ("virtual" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Oracle Virtual Box")
+            print("    Okay. I will not open Oracle Virtual Box")
+            print()
         else:
+            pyttsx3.speak("Opening Oracle Virtual Box")
             print("    Opening Oracle Virtual Box.....")
             os.system("VirtualBox")
-    elif (("sum" in p.lower()) or ("add" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("sum" in q) or ("add" in q)) and (("show" in q) or ("print" in q)) and ("code" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak(
+                "Okay. I will not show you the code for addition")
+            print("    Okay. I will not show you the code for addition")
+            print()
         else:
+            pyttsx3.speak("showing code for addition")
             print("    ------------------------------------------------------")
             print("    numbers = input(\"Enter numbers separated by space \")")
             print("    numberList = numbers.split()")
@@ -97,10 +149,14 @@ while True:
             print("        sum += int(num)")
             print("    print(\"Sum of all entered numbers = \", sum)")
             print("    ------------------------------------------------------")
-    elif ("sum" in p.lower()) or ("add" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
+            print()
+    elif ("sum" in q) or ("add" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not do the addition")
             print("    Ok")
+            print()
         else:
+            pyttsx3.speak("Enter numbers separated by space")
             numbers = input("    Enter numbers separated by space ")
             numberList = numbers.split()
 
@@ -109,12 +165,18 @@ while True:
             for num in numberList:
                 sum += int(num)
             print("    Sum of all entered numbers = ", sum)
-    elif (("difference" in p.lower()) or ("subtract" in p.lower()) or ("sub" in p.lower())) and (("show" in p.lower()) or ("p.lower()rint" in p.lower())) and ("code" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("difference" in q) or ("subtract" in q) or ("sub" in q)) and (("show" in q) or ("print" in q)) and ("code" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak(
+                "Okay. I will not show you the code for subtraction")
+            print("    Okay. I will not show you the code for subtraction")
+            print()
         else:
+            pyttsx3.speak("showing code for subtraction")
             print("    ------------------------------------------------------")
-            print("    numbers = input(\"Enter only two numbers separated by space \")")
+            print(
+                "    numbers = input(\"Enter only two numbers separated by space \")")
             print("    numberList = numbers.split()")
             print()
             print("    # Calculating the difference of two numbers")
@@ -122,21 +184,31 @@ while True:
             print("    diff = int(max(numberList)) - int(min(numberList))")
             print("    print(\"Difference between the two numbers = \", diff)")
             print("    ------------------------------------------------------")
-    elif ("subtract" in p.lower()) or ("difference" in p.lower()) or ("diff" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif ("subtract" in q) or ("difference" in q) or ("diff" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not do the subtraction")
+            print("    Okay. I will not do the subtraction")
+            print()
         else:
-            numbers = input("    Enter only two numbers separated by space ")
+            pyttsx3.speak("Enter only two numbers separated by space")
+            numbers = input(
+                "    Enter only two numbers separated by space ")
             numberList = numbers.split()
 
             # Calculating the diff of two numbers
 
             diff = int(max(numberList)) - int(min(numberList))
             print("    Difference between the two numbers = ", diff)
-    elif (("product" in p.lower()) or ("multiply" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
+            print()
+    elif (("product" in q) or ("multiply" in q)) and (("show" in q) or ("print" in q)) and ("code" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak(
+                "Okay. I will not show you the code for multiplication")
             print("    Ok")
+            print()
         else:
+            pyttsx3.speak("showing code for multiplication")
             print("    ------------------------------------------------------")
             print("    numbers = input(\"Enter numbers separated by space \")")
             print("    numberList = numbers.split()")
@@ -147,10 +219,14 @@ while True:
             print("        product *= int(num)")
             print("    print(\"Product of all entered numbers = \", product)")
             print("    ------------------------------------------------------")
-    elif ("product" in p.lower()) or ("multiply" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif ("product" in q) or ("multiply" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not do the multiplication")
+            print("    Okay. I will not do the multiplication")
+            print()
         else:
+            pyttsx3.speak("Enter numbers separated by space")
             numbers = input("    Enter numbers separated by space ")
             numberList = numbers.split()
 
@@ -159,12 +235,18 @@ while True:
             for num in numberList:
                 product *= int(num)
             print("    Product of all entered numbers = ", product)
-    elif (("division" in p.lower()) or ("divide" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif (("division" in q) or ("divide" in q)) and (("show" in q) or ("print" in q)) and ("code" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak(
+                "Okay. I will not show you the code for division")
+            print("    Okay. I will not show you the code for division")
+            print()
         else:
+            pyttsx3.speak("showing code for Division")
             print("    ------------------------------------------------------")
-            print("    numbers = input(\"Enter only two numbers separated by space \")")
+            print(
+                "    numbers = input(\"Enter only two numbers separated by space \")")
             print("    numberList = numbers.split()")
             print()
             print("    # Calculating the division of two numbers")
@@ -172,19 +254,36 @@ while True:
             print("    div = int(max(numberList)) / int(min(numberList))")
             print("    print(\"Division of two numbers = \", div)")
             print("    ------------------------------------------------------")
-    elif ("division" in p.lower()) or ("divide" in p.lower()):
-        if (("don't" in p.lower()) or ("do not" in p.lower())):
-            print("    Ok")
+            print()
+    elif ("division" in q) or ("divide" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not do the division")
+            print("    Okay. I will not do the division")
+            print()
         else:
-            numbers = input("    Enter only two numbers separated by space ")
+            pyttsx3.speak("Enter only two numbers separated by space")
+            numbers = input(
+                "    Enter only two numbers separated by space ")
             numberList = numbers.split()
 
             # Calculating the division of two numbers
 
             div = int(max(numberList)) / int(min(numberList))
             print("    Division of two numbers = ", div)
-    elif ("exit" in p.lower()) or ("shutdown" in p.lower()) or ("quit" in p.lower()):
+            print()
+    elif (("play" in q) and (("music" in q) or ("song" in q))):
+        pyttsx3.speak("Playing Bella Ciao")
+        print("    Playing Bella Ciao...")
+        playsound('songs/BellaCiao (1).mp3')
+        print()
+    elif ("exit" in q) or ("shutdown" in q) or ("quit" in q):
+        pyttsx3.speak("Okay closing app...")
         print("    Closing App.....")
+        pyttsx3.speak("Have a nice day.")
+        print("    Have a nice day.")
+        print()
         break
     else:
+        pyttsx3.speak("Please write proper command")
         print("    Please write proper command")
+        print()
