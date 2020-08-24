@@ -32,10 +32,16 @@ print("|I will do the following things for you -->                              
 pyttsx3.speak("I will do the following things for you")
 print("|-----------------------------------------------------                                 |")
 print("|I can show u -->                                                                      |")
-print("|               Current Time                                                           |")
-print("|               Today's date                                                           |")
+print("|                 Current Time                                                         |")
+print("|                 Today's date                                                         |")
 print("|-----------------------------------------------------                                 |")
 print("|I can open -->                                                                        |")
+print("|               GMail                                                                  |")
+print("|               GitHub                                                                 |")
+print("|               YouTube                                                                |")
+print("|               Facebook                                                               |")
+print("|               LinkedIn                                                               |")
+print("|               Instagram                                                              |")
 print("|               Calculator                                                             |")
 print("|               Chome Browser                                                          |")
 print("|               Notepad editor                                                         |")
@@ -105,6 +111,66 @@ while True:
             pyttsx3.speak("Opening Chrome Browser")
             print("    Opening Chrome Browser.....")
             os.system("chrome")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("facebook" in q) or ("fb" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Facebook")
+            print("    Okay. I will not open facebook")
+            print()
+        else:
+            pyttsx3.speak("Opening facebook")
+            print("    Opening Facebook.....")
+            os.system("chrome facebook.com")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("instagram" in q) or ("insta" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open Instagram")
+            print("    Okay. I will not open Instagram")
+            print()
+        else:
+            pyttsx3.speak("Opening Instagram")
+            print("    Opening Instagram.....")
+            os.system("chrome instagram.com")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("linkedin" in q) or ("linked" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open LinkedIn")
+            print("    Okay. I will not open LinkedIn")
+            print()
+        else:
+            pyttsx3.speak("Opening LinkedIn")
+            print("    Opening LinkedIn.....")
+            os.system("chrome linkedin.com")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and ("youtube" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open YouTube")
+            print("    Okay. I will not open YouTube")
+            print()
+        else:
+            pyttsx3.speak("Opening YouTube")
+            print("    Opening YouTube.....")
+            os.system("chrome youtube.com")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and ("gmail" in q):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open GMail")
+            print("    Okay. I will not open GMail")
+            print()
+        else:
+            pyttsx3.speak("Opening GMail")
+            print("    Opening GMail.....")
+            os.system("chrome gmail.com")
+            print()
+    elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("github" in q) or ("git" in q)):
+        if (("don't" in q) or ("do not" in q)):
+            pyttsx3.speak("Okay. I will not open GitHub")
+            print("    Okay. I will not open github")
+            print()
+        else:
+            pyttsx3.speak("Opening GitHub")
+            print("    Opening GitHub.....")
+            os.system("GitHubDesktop")
             print()
     elif (("run" in q) or ("execute" in q) or ("open" in q) or ("start" in q)) and (("notepad" in q) or ("editor" in q)):
         if (("don't" in q) or ("do not" in q)):
