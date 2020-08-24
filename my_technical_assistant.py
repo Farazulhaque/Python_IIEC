@@ -3,7 +3,6 @@ import os
 
 
 print()
-
 print("                   Hello!! I am your technical assistant.                               ")
 pyttsx3.speak("Hello!! I am your technical assistant.")
 print("                   --------------------------------------                               ")
@@ -35,7 +34,7 @@ print("|________________________________________________________________________
 print()
 name = input("    Can you please tell me your name?  ")
 print("    ------------------------------------------")
-print("    Welcome to technical assistant ",name)
+print("    Welcome to technical assistant ", name)
 print("    ------------------------------------------")
 print()
 while True:
@@ -66,7 +65,7 @@ while True:
         else:
             print("    Opening Visual Studio Code Editor.....")
             os.system("code")
-    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vlc" in p.lower()) and ("media" in p.lower()) and ("player" in p.lower())) :
+    elif (("run" in p.lower()) or ("execute" in p.lower()) or ("open" in p.lower())) and (("vlc" in p.lower()) and ("media" in p.lower()) and ("player" in p.lower())):
         if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
@@ -110,7 +109,7 @@ while True:
             for num in numberList:
                 sum += int(num)
             print("    Sum of all entered numbers = ", sum)
-    elif (("difference" in p.lower()) or ("subtract" in p.lower()) or("sub" in p.lower())) and (("show" in p.lower()) or ("p.lower()rint" in p.lower())) and ("code" in p.lower()):
+    elif (("difference" in p.lower()) or ("subtract" in p.lower()) or ("sub" in p.lower())) and (("show" in p.lower()) or ("p.lower()rint" in p.lower())) and ("code" in p.lower()):
         if (("don't" in p.lower()) or ("do not" in p.lower())):
             print("    Ok")
         else:
@@ -131,8 +130,8 @@ while True:
             numberList = numbers.split()
 
             # Calculating the diff of two numbers
-            
-            diff = int(max(numberList)) - int(min (numberList))
+
+            diff = int(max(numberList)) - int(min(numberList))
             print("    Difference between the two numbers = ", diff)
     elif (("product" in p.lower()) or ("multiply" in p.lower())) and (("show" in p.lower()) or ("print" in p.lower())) and ("code" in p.lower()):
         if (("don't" in p.lower()) or ("do not" in p.lower())):
@@ -181,8 +180,8 @@ while True:
             numberList = numbers.split()
 
             # Calculating the division of two numbers
-            
-            div = int(max(numberList)) / int(min (numberList))
+
+            div = int(max(numberList)) / int(min(numberList))
             print("    Division of two numbers = ", div)
     elif ("exit" in p.lower()) or ("shutdown" in p.lower()) or ("quit" in p.lower()):
         print("    Closing App.....")
