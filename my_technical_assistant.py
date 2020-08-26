@@ -12,27 +12,28 @@ engine.setProperty('rate', 180)     # setting up new voice rate
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-
 print()
-print("\t\tHello!! I am your technical assistant.")
+print("\t\t\t\t\tHello!! I am your technical assistant.")
 pyttsx3.speak("Hello!! I am your technical assistant.")
-print("\t\t--------------------------------------")
 print()
-print("\t\t--------------------------------------")
-pyttsx3.speak("Can you please tell me your name?")
-name = input("\t\tCan you please tell me your name? ")
-print("\t\t------------------------------------------")
-pyttsx3.speak("Please type your password : ")
-pwd = getpass.getpass("\t\tPlease type your password : ")
-print("\t\t------------------------------------------")
-if name == "Faraz":
-    if pwd == "abc123":
-        print("\t\tWelcome to technical assistant ", name)
-        print("\t\t------------------------------------------")
-        pyttsx3.speak(f"Welcome to technical assistant {name}")
-
+count = 0
+while count < 3:
+    print("\t\t\t\t\t--------------------------------------")
+    pyttsx3.speak("Enter username : ")
+    username = input("\t\t\t\t\tEnter username : ")
+    print("\t\t\t\t\t--------------------------------------")
+    pyttsx3.speak("Enter password : ")
+    password = getpass.getpass("\t\t\t\t\tEnter password : ")
+    print("\t\t\t\t\t--------------------------------------")
+    if username == "Faraz" and password == "abc123":
+        pyttsx3.speak("Access Granted")
+        print("\t\t\t\t\tAccess Granted")
+        print("\t\t\t\t\t--------------------------------------")
+        print("\t\t\t\t\tWelcome to technical assistant ", username)
+        pyttsx3.speak(f"Welcome to technical assistant {username}")
+        print("\t\t\t\t\t--------------------------------------")
         print()
-        print("\t\t________________________________________________________________________________________")
+        print("\t\t ______________________________________________________________________________________ ")
         print("\t\t|                                                                                      |")
         print("\t\t|I will do the following things for you -->                                            |")
         pyttsx3.speak("I will do the following things for you")
@@ -70,11 +71,11 @@ if name == "Faraz":
         print("\t\t|                                                              Division                |")
         print("\t\t|______________________________________________________________________________________|")
         print()
-        pyttsx3.speak(f"Hi {name}, How can I help you? ")
+        pyttsx3.speak(f"Hi {username}, How can I help you? ")
 
         while True:
 
-            print("\t\tHi "+name + ", How can I help you? ", end='')
+            print("\t\tHi "+username + ", How can I help you? ", end='')
             p = input()
             q = p.lower()
             if (("date" in q) and ("today" in q)):
@@ -395,9 +396,12 @@ if name == "Faraz":
                 pyttsx3.speak("Please write proper command")
                 print("\t\tPlease write proper command")
                 print()
+            break
+        break
+
     else:
-        pyttsx3.speak("Your password is incorrect")
-        print("\t\tYour password is incorrect")
-else:
-    pyttsx3.speak("Your user name is incorrect")
-    print("\t\tYour user name is incorrect")
+        pyttsx3.speak("Access denied. Try again")
+        print("\t\t\t\t\tAccess denied. Try again.")
+        pyttsx3.speak(f"{2-count} Attempt left")
+        print("\t\t\t\t\t", 2-count, "Attempts left")
+        count += 1
